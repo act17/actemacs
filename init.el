@@ -2,8 +2,8 @@
 ;;Made by act, July 28th, 2022
 ;;Released on July 30th, 2022
 ;;Under the GNU GPL 3.0
-;;Version 1.1
-;;Released on July 31st, 2022
+;;Version 1.2
+;;Released on August 3rd, 2022
 ;;github.com/act17/actemacs
 
 
@@ -20,12 +20,13 @@
 (define-key global-map (kbd "C-c c") 'act/working-directory)
 (define-key global-map (kbd "C-x M-l") 'act/lineswitch)
 (define-key global-map (kbd "TAB") 'act/insert-tab)
+(define-key global-map (kbd "C-z") 'act/petty)
   
 ;;Creating some sort of command
 (defun act/working-directory ()
   "Goes to the working directory.";;This is for my working directory.
   (interactive)
-  (dired "~/c/")
+  (dired "~/c/.git")
 )
 
 ;;This switches lines on and off.
@@ -52,4 +53,10 @@
   "Inserts a tab."
   (interactive)
   (insert "  ")
+)
+
+;;This is petty
+(defun act/petty ()
+  "Not this time you bahstid."
+  (interactive)
 )
