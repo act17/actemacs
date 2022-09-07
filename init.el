@@ -1,11 +1,17 @@
 ;;An attempt at an EMacs Config
 ;;Made by act, July 28th, 2022
-;;Released on July 30th, 2022
+;;Released on September 7th, 2022
 ;;Under the GNU GPL 3.0
-;;Version 1.2
-;;Released on August 3rd, 2022
+;;Version 1.3
 ;;github.com/act17/actemacs
 
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+(require 'package)		;;Thanks emacswiki.org
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 ;;Enabling numbers for buffers:
 (global-display-line-numbers-mode 1)
@@ -18,10 +24,43 @@
 
 ;;Key-Binding
 (define-key global-map (kbd "C-c c") 'act/working-directory)
+(define-key global-map (kbd "C-c m") 'act/menubar)
 (define-key global-map (kbd "C-x M-l") 'act/lineswitch)
 (define-key global-map (kbd "TAB") 'act/insert-tab)
 (define-key global-map (kbd "C-z") 'act/petty)
-  
+(define-key global-map (kbd "C-x p") 'act/packagelist)
+(define-key global-map (kbd "C-x M-p") 'act/packagerefresh)
+(define-key global-map (kbd "C-x g") 'act/magitopen)
+
+;;Open the Menu Bar
+(defun act/menubar ()
+  "Opens the menu bar."
+  (interactive)
+  (menu-bar-open)
+)
+
+;;Open Magit
+(defun act/magitopen()
+  "Opens Magit."
+  (interactive)
+  (magit-status)
+)
+
+;;List Packages.
+(defun act/packagelist()
+  "Lists the packages."
+  (interactive)
+  (list-packages)
+)
+
+;;Package Refreshing
+(defun act/packagerefresh()
+  "Refreshes the packages."
+  (interactive)
+  (package-refresh-contents)
+  (message "Package contents refreshed.")
+)
+
 ;;Creating some sort of command
 (defun act/working-directory ()
   "Goes to the working directory.";;This is for my working directory.
@@ -60,3 +99,16 @@
   "Not this time you bahstid."
   (interactive)
 )
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (magit ##))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
