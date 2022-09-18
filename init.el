@@ -1,8 +1,8 @@
 ;;An attempt at an EMacs Config
 ;;Made by act, July 28th, 2022
-;;Released on September 7th, 2022
+;;Released on September 18th, 2022
 ;;Under the GNU GPL 3.0
-;;Version 1.3
+;;Version 1.4
 ;;github.com/act17/actemacs
 
 ;; Added by Package.el.  This must come before configurations of
@@ -31,6 +31,11 @@
 (define-key global-map (kbd "C-x p") 'act/packagelist)
 (define-key global-map (kbd "C-x M-p") 'act/packagerefresh)
 (define-key global-map (kbd "C-x g") 'act/magitopen)
+(define-key global-map (kbd "C-c l") 'org-store-link)
+(define-key global-map (kbd "C-c a") 'org-agenda)
+(define-key global-map (kbd "C-c b") 'org-switchb)
+(define-key global-map (kbd "C-c c") 'org-capture)
+
 
 ;;Open the Menu Bar
 (defun act/menubar ()
