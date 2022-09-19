@@ -2,7 +2,7 @@
 ;;Made by act, July 28th, 2022
 ;;Released on September 18th, 2022
 ;;Under the GNU GPL 3.0
-;;Version 1.41
+;;Version 1.4.1
 ;;github.com/act17/actemacs
 
 ;; Added by Package.el.  This must come before configurations of
