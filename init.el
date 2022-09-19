@@ -2,7 +2,7 @@
 ;;Made by act, July 28th, 2022
 ;;Released on September 18th, 2022
 ;;Under the GNU GPL 3.0
-;;Version 1.4
+;;Version 1.41
 ;;github.com/act17/actemacs
 
 ;; Added by Package.el.  This must come before configurations of
@@ -23,7 +23,7 @@
 (load-theme 'deeper-blue t)
 
 ;;Key-Binding
-(define-key global-map (kbd "C-c c") 'act/working-directory)
+(define-key global-map (kbd "C-c C-c") 'act/working-directory)
 (define-key global-map (kbd "C-c m") 'act/menubar)
 (define-key global-map (kbd "C-x M-l") 'act/lineswitch)
 (define-key global-map (kbd "TAB") 'act/insert-tab)
@@ -35,7 +35,7 @@
 (define-key global-map (kbd "C-c a") 'org-agenda)
 (define-key global-map (kbd "C-c b") 'org-switchb)
 (define-key global-map (kbd "C-c c") 'org-capture)
-
+(define-key global-map (kbd "C-c o") 'act/orgopen)
 
 ;;Open the Menu Bar
 (defun act/menubar ()
@@ -43,6 +43,15 @@
   (interactive)
   (menu-bar-open)
 )
+
+;;Org Configuration
+(setq org-agenda-files (directory-files-recursively "~/.emacs.d/org" "\\.org"))
+(defun act/orgopen()
+  "Goes to the Org directory."
+  (interactive)
+  (dired "~/.emacs.d/org")
+)
+(setq org-agenda-include-diary t)
 
 ;;Open Magit
 (defun act/magitopen()
