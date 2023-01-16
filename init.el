@@ -1,8 +1,8 @@
 ;;An attempt at an EMacs Config
 ;;Made by act, July 28th, 2022
-;;Released on September 18th, 2022
+;;Updated on January 15th, 2023
 ;;Under the GNU GPL 3.0
-;;Version 1.4.1
+;;Version 1.5.0
 ;;github.com/act17/actemacs
 
 ;; Added by Package.el.  This must come before configurations of
@@ -12,6 +12,7 @@
 (package-initialize)
 (require 'package)		;;Thanks emacswiki.org
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 
 ;;Enabling numbers for buffers:
 (global-display-line-numbers-mode 1)
@@ -21,6 +22,9 @@
 
 ;;Setting a Theme
 (load-theme 'deeper-blue t)
+
+;;Emacs, please stop making new backups. It's an actual problem and it screws me up most of the time.
+(setq make-backup-files nil)
 
 ;;Key-Binding
 (define-key global-map (kbd "C-c C-c") 'act/working-directory)
@@ -119,7 +123,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (magit ##))))
+ '(package-selected-packages (quote (rust-mode magit ##))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
