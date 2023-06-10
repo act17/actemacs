@@ -1,8 +1,8 @@
 ;;An attempt at an EMacs Config
 ;;Made by act, July 28th, 2022
-;;Updated on January 15th, 2023
+;;Updated on June 10th, 2023
 ;;Under the GNU GPL 3.0
-;;Version 1.5.0
+;;Version 8
 ;;github.com/act17/actemacs
 
 ;; Added by Package.el.  This must come before configurations of
@@ -40,6 +40,11 @@
 (define-key global-map (kbd "C-c b") 'org-switchb)
 (define-key global-map (kbd "C-c c") 'org-capture)
 (define-key global-map (kbd "C-c o") 'act/orgopen)
+(define-key global-map (kbd "C-c e") 'enlarge-window)
+(define-key global-map (kbd "C-c d") 'shrink-window)
+(define-key global-map (kbd "C-c s") 'enlarge-window-horizontally)
+(define-key global-map (kbd "C-c f") 'shrink-window-horizontally)
+
 
 ;;Open the Menu Bar
 (defun act/menubar ()
